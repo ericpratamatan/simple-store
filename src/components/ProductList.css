@@ -1,0 +1,65 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: left;
+}
+
+.product-item img {
+    width: 100%;
+    /* Ensure images take up full width */
+    height: 200px;
+    /* Set a fixed height for uniformity */
+    object-fit: cover;
+    /* Ensure images cover the area */
+    border-radius: 10px;
+}
+
+.product-item h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #1e90ff;
+    /* Dodger Blue */
+}
+
+.product-item p {
+    font-size: 0.9em;
+    color: #555;
+    height: 60px;
+    /* Set a fixed height for descriptions */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-item h4 {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.product-item button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    background-color: #dc3545;
+    /* Dodger Blue */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product-item button:hover {
+    background-color: #dd4958;
+    /* Slightly darker blue */
+}

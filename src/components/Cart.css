@@ -1,0 +1,64 @@
+.cart {
+    padding: 20px;
+}
+
+.cart h2 {
+    font-size: 1.5em;
+    color: #dc3545;
+    /* Dodger Blue */
+}
+
+.cart ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cart li {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.cart li img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.cart li div {
+    flex-grow: 1;
+}
+
+.cart li h3 {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    color: 000000;
+    /* Dodger Blue */
+}
+
+.cart li p {
+    margin: 0 0 10px;
+    color: #555;
+}
+
+.cart li button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #dc3545;
+    /* Dodger Blue */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.cart li button:hover {
+    background-color: #de4454;
+    /* Slightly darker blue */
+}

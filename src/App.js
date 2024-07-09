@@ -1,25 +1,52 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import ProductList from './components/ProductList';
+import CartIcon from './components/CartIcon';
+import Cart from './components/Cart';
+import Login from './components/Login';
+import LoginAPI from './components/LoginAPI';
+import Register from './components/Register';
+import Logout from './components/Logout';
 import './App.css';
 
-function App() {
+const App = () => {
+  const user = useSelector((state) => state.auth ? state.auth.user : null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <header>
+          <h1>Simple Store</h1>
+          <nav>
+            <Link to="/">Products</Link>
+            <Link to="/cart">
+              <CartIcon />
+            </Link>
+            {user ? (
+              <>
+                <span className="welcome-message">Welcome, {user.email}!</span>
+                <Logout />
+              </>
+            ) : (
+              <>
+                <Link to="/login">Login</Link>
+                <Link to="/login-api">Login with API</Link>
+                <Link to="/register">Register</Link>
+              </>
+            )}
+          </nav>
+        </header>
+        <Routes>
+          <Route path="/" element={<ProductList />} />
+          <Route path="/cart" element={user ? <Cart /> : <Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/login-api" element={<LoginAPI />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
